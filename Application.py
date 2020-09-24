@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from Tkinter import *
-from ttk import *
+from tkinter import *
+from tkinter.ttk import *
 
 from datetime import date
 import json
@@ -38,12 +38,12 @@ class Application(Frame):
 
     def getZodiacData(self, day, month, year):
         try:
-            with open(self.sign_file_name) as json_data:
+            with open(self.sign_file_name, encoding="utf-8") as json_data:
                 data = json.load(json_data)
                 pass
             pass
         except Exception as exception:
-            print "Exception {}: {}".format(type(exception), exception)
+            print("Exception {}: {}".format(type(exception), exception))
             return None
             pass
 
@@ -76,12 +76,12 @@ class Application(Frame):
 
     def getHoroscopeData(self, key):
         try:
-            with open(self.horoscope_file_name) as json_data:
+            with open(self.horoscope_file_name, encoding="utf-8") as json_data:
                 data = json.load(json_data)
                 pass
             pass
         except Exception as exception:
-            print "Exception {}: {}".format(type(exception), exception)
+            print("Exception {}: {}".format(type(exception), exception))
             return None
             pass
 
@@ -128,14 +128,14 @@ class Application(Frame):
             month = int(self.month.get())
             year = int(self.year.get())
         except Exception as exception:
-            print "Exception {}: {}".format(type(exception), exception)
+            print("Exception {}: {}".format(type(exception), exception))
             pass
 
         b_date = "{:02d}.{:02d}.{}".format(day, month, year)
 
         zodiac_data = self.getZodiacData(day, month, year)
         if zodiac_data is None:
-            print "zodiac_data is None"
+            print("zodiac_data is None")
             return
             pass
 

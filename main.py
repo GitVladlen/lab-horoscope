@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from Tkinter import *
-from ttk import *
+from tkinter import *
+from tkinter.ttk import *
 
 from Application import Application
 
